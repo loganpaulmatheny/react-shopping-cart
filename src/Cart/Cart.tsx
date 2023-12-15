@@ -10,9 +10,16 @@ type Props = {
   removeFromCart: (id: number) => void;
 }
 
+const calculateTotal = (items: CartItemType[]) => {
+  return items.reduce((acc: number, item) => {
+    return acc + item.amount * item.price
+  }, 0)
+}
+
+
+
 const Cart: React.FC<Props> = ({cartItems, addToCart, removeFromCart}) => {
-  
-  
+    
   return (
     <Wrapper>
       <h2>Your shopping card</h2>
@@ -25,6 +32,7 @@ const Cart: React.FC<Props> = ({cartItems, addToCart, removeFromCart}) => {
           removeFromCart={removeFromCart}
         />
       ))}
+      <h2>Total: ${calculateTotal(cartItems).toFixed(2)}</h2>
     </Wrapper>
   )
 }

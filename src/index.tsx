@@ -12,9 +12,7 @@ const client = new QueryClient()
 
 root.render(
 <QueryClientProvider client={client}>
-<React.StrictMode>
     <App />
-  </React.StrictMode>
 </QueryClientProvider>
 );
 
