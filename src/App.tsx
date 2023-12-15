@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useQuery } from "react-query";
 // Components 
 import Item from "./Item/Item"
+import Cart from "./Cart/Cart";
 import Drawer  from "@mui/material/Drawer";
 import LinearProgress from "@mui/material/LinearProgress";
 import Grid from "@mui/material/Grid";
@@ -59,7 +60,7 @@ function App() {
         </Badge>
       </StyledButton>
       <Drawer anchor="right" open={cartOpen} onClose={() => setCartOpen(false)}>
-        Cart goes here
+        <Cart cartItems={cartItems} addToCart={handleAddToCart} removeFromCart={handleRemoveFromCart}></Cart>
       </Drawer>
       <Grid container spacing={3}>
         {data?.map((item) => (
