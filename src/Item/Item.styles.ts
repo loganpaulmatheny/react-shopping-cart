@@ -1,6 +1,29 @@
 import styled from "styled-components";
 
 export const Wrapper = styled.div`
-// This is where your css styling would / will go
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  width: 100%;
+  border: 1px solid lightblue;
+  border-radius: 20px;
+  height: 100%
 
+  button {
+    border-radius: 0 0 20px 20px
+    // styled so the button also doesn't go over the wrapper
+  }
+  
+  img {
+    max-height: 250px;
+    object-fit: cover;
+    border-radius: 0 0 20px 20px
+  }
+
+  div {
+    font-family:  Arial, Helvetica, sans-serif;
+    height: 100%;
+  }
 `;
+
+
